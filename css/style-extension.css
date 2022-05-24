@@ -1,0 +1,124 @@
+/* CSS modifications for bops */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.XXXanimated {
+  /*CSS transitions*/
+  -o-transition-property: none !important;
+  -moz-transition-property: none !important;
+  -ms-transition-property: none !important;
+  -webkit-transition-property: none !important;
+  transition-property: none !important;
+  /*CSS transforms*/
+  -o-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -webkit-transform: none !important;
+  transform: none !important;
+  /*CSS animations*/
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  -ms-animation: none !important;
+  animation: none !important;
+}
+
+/*
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif; }
+*/
+
+.site-blocks-cover h1 {
+  /*font-size: 4rem;*/
+  font-size: 3.5rem;
+}
+
+.site-section { }
+  .site-section.site-section-small {
+    padding: 3em 0; }
+
+.site-footer { }
+  .site-footer.site-footer-small {
+    padding: 3em 0; }
+
+::placeholder {
+  font-size: 1.2rem;
+}
+
+.text-white-transparent {
+  color: rgba(255, 255, 255, 0.64) !important;
+}
+.text-white-transparent:hover {
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+
+
+.zoom_meeting {
+  /*
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  */
+}
+.zoom_meeting__waiting {
+  color: #fff;
+  background-color: #83b3dc;
+  border-color: #7baad3;
+  pointer-events: none;
+  cursor: not-allowed;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  width: 100%;
+  border-radius: 3px;
+  text-align: center;
+  display: block;
+
+  line-height: 38px;
+  padding: 5px 35px;
+  font-size: 18px;
+  margin-top: 29px;
+}
+.zoom_meeting__join, .zoom_meeting__reserve {
+  color: #fff;
+  background-color: #348ffb;
+
+  width: 100%;
+  border-radius: 3px;
+  text-align: center;
+  display: block;
+
+  line-height: 38px;
+  padding: 5px 35px;
+  font-size: 18px;
+  margin-top: 29px;
+}
+.zoom_meeting__join:hover, .zoom_meeting__join:focus, .zoom_meeting__reserve:hover, .zoom_meeting__reserve:focus {
+  color: rgba(255, 255, 255, 1);;
+  background-color: #2681f2;
+  border-color: #2681f2;
+}
+.zoom_meeting__over {
+  color: #fff;
+  background-color: #212529;
+  border-color: #212529;
+  pointer-events: none;
+  cursor: not-allowed;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  width: 100%;
+  border-radius: 3px;
+  text-align: center;
+  display: block;
+
+  line-height: 38px;
+  padding: 5px 35px;
+  font-size: 18px;
+  margin-top: 29px;
+}
