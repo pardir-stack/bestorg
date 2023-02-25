@@ -1,0 +1,35 @@
+---
+
+layout: default
+---
+
+    <div class="site-section site-section-small">
+      <div class="container">
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <ul>
+        {% for testitem in site.data.testitems %}
+          <li>
+            <a href="./{{ testitem.id }}">
+              {{ testitem.name }} ({{ testitem.id }})
+            </a>
+          </li>
+        {% endfor %}
+        </ul>
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
+  </div>

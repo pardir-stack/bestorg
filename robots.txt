@@ -1,0 +1,12 @@
+# robots.txt best...
+
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: *
+Disallow: /intern*
+Disallow: /js*
+Disallow: /OLD*
+Allow:    /event*
+Allow:    /image
+Disallow: /ce
+

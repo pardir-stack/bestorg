@@ -1,0 +1,41 @@
+theme: jekyll-theme-minimal
+
+# Jekyll SEO tag configuration:
+#   https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+title: BestOnlineParties.org
+tagline: Find Best Online Parties. Everywhere.
+description: Either you are alone at home or with friends in the park or wherever – join the best online parties to see old and new friends and to be seen by them.
+logo: /images/hero_bg_1.jpg
+
+url: https://BestOnlineParties.org
+#baseurl: /
+
+google_analytics_id: UA-174062748-1
+
+exclude:
+- OLD
+- _events/OLD
+- README*
+- "*.sh"
+#- common
+
+timezone: Etc/UTC
+
+collections:
+  events: # corresdonds to folder "/_events/"
+    #output: true
+    # no output if we directly link to dance123:
+    output: false
+    
+# needed to generate pages with recognized date in the file name which is in the future:
+future: true
+
+
+page_gen-dirs: [true|false]
+
+page_gen:
+- data: 'testitems'
+  template: 'testitem'
+  name: 'id'
+  dir: 'testitems'
+

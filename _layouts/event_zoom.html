@@ -1,0 +1,118 @@
+---
+
+# The Jekyll SEO tag will respect the following YAML front matter if included in a post, page, or document
+# (https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md):
+#    title - The title of the post, page, or document
+#    description - A short description of the page's content
+#    image - URL to an image associated with the post, page, or document (e.g., /assets/page-pic.jpg)
+#    author - Page-, post-, or document-specific author information (see Advanced usage)
+#    lang - Page-, post-, or document-specific language information
+
+layout: default
+---
+
+
+{% if page.event_in_future %}
+  <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url('{{ page.event_image | default: '/images/hero_bg_1.jpg' }}');"
+    data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="400">
+
+          <h1 class="text-white">{{ page.title4body | default: page.title | default: site.title }}</h1>
+
+          {% if page.event_comment %}
+            <p>{{ page.event_comment }}</p>
+          {% endif %}
+
+          <div id="zoom_meeting_button" class="zoom_meeting">
+          </div>
+          <p><i><sub>{{ page.event_date}} <span class="mx-3">&bullet;</span> {{ page.event_time }}</sub></i></p>
+          <script type="text/javascript">
+            //$(document).ready(function(){ updateZoomMeetingButton("2020-07-29T18:00:00.000Z", "2020-10-05T20:00:00.000Z", "http://reserve.example.com", "http://zoom.example.com"); });
+            $(document).ready(function(){ updateZoomMeetingButton("{{ page.event_ts_begin_utc }}", "{{ page.event_ts_end_utc}}", "{{ page.event_reserve_url}}", "{{ page.event_join_url}}"); });
+          </script>
+
+
+          <!--         
+          <p>{{ page.event_date}} <span class="mx-3">&bullet;</span> {{ page.event_time }}</p>
+          {% if page.event_comment %}
+            <p><i><sub>{{ page.event_comment }}</sub></i></p>
+          {% endif %}
+
+          <div id="zoom_meeting_button" class="zoom_meeting">
+          </div>
+          <script type="text/javascript">
+            //$(document).ready(function(){ updateZoomMeetingButton("2020-07-29T18:00:00.000Z", "2020-10-05T20:00:00.000Z", , "http://reserve.example.com", "http://zoom.example.com"); });
+            $(document).ready(function(){ updateZoomMeetingButton("{{ page.event_ts_begin_utc }}", "{{ page.event_ts_end_utc}}", "{{ page.event_reserve_url}}", "{{ page.event_join_url}}"); });
+          </script>
+        -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <h2>{{ page.title4body | default: page.title | default: site.title }}</h2>
+
+          {{ content | markdownify }}
+
+          {% if page.event_more_details_url %}
+             <p>More details: <a href="{{ page.event_more_details_url }}" target="_blank">{{ page.link_title | default: page.title }} - organizer page</a></p>
+          {% endif %}
+          <!--
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil ratione dolores expedita id repudiandae
+            nostrum aut, impedit repellat nam veritatis, pariatur facere reprehenderit alias atque molestias ipsum officia
+            asperiores possimus eos, quis nemo hic. Autem molestias dolorum blanditiis quibusdam culpa nobis quam, soluta
+            quasi quis, fugiat delectus pariatur, eos quae.</p>
+
+  
+          <div class="pt-5">
+            <p>Categories: <a href="#">Music</a>, <a href="#">Dance</a> Tags: <a href="#">#house</a>, <a
+                href="#">#electtro</a></p>
+          </div>
+        -->
+  
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endif %}
+
+
+
+{% unless page.event_in_future %}
+  <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url('{{ page.event_image | default: '/images/hero_bg_1.jpg' }}');"
+  data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-7 text-center" data-aos="fade-up" data-aos-delay="400">
+          <h1 class="mb-4">This party is already over :-(</h1>
+          <p>But you can signup for the next:</p>
+          <p data-aos="fade-up" data-aos-delay="800">
+            <form id="subscribe-form-index" action="https://formspree.io/xdowyraq" method="post" class="site-block-subscribe">
+              <div class="input-group mb-3">
+                <input type="text" name="emailOrPhone" class="form-control border-secondary text-white bg-transparent" placeholder="Email or mobile phone"
+                  aria-label="Email or mobile phone" aria-describedby="button-addon2">
+                <input type="hidden" name="pageurl" value="{{ page.url }}#index" />
+                <div class="input-group-append">
+                  <button class="btn btn-primary rounded-top-right-0" type="submit" id="subscribe-form-index-button">Subscribe to Newsletter</button>
+                </div>
+              </div>
+            </form>
+            <script>
+              window.addEventListener("DOMContentLoaded", function() { 
+                initSubscribeForm(formId="subscribe-form-index"); 
+              });
+            </script>
+          </p>
+          <p id="subscribe-form-index-status"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endunless %}
